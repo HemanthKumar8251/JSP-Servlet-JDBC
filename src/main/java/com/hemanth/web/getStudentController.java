@@ -17,7 +17,7 @@ public class getStudentController extends HttpServlet {
 		int sid = Integer.parseInt(request.getParameter("sid"));
 		StudentDao dao = new StudentDao();
 		Student s1 = dao.getStudent(sid);
-		
+		request.setAttribute("student", s1);
 		RequestDispatcher rd = request.getRequestDispatcher("Student.jsp");
 		rd.forward(request, response);
 	}
